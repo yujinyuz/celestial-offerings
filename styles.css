@@ -1,54 +1,134 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f7e1ea;
-  text-align: center;
+  font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
+  background-image: url("valentine-bg.jpg");
+  /* Set custom background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+  body {
+    background-size: auto;
+    /* Adjust background size for smaller mobile devices */
+    background-position: inherit;
+    /* Inherit background position from parent */
+  }
 }
 
 .container {
   max-width: 600px;
-  margin: 100px auto;
-  background-color: #fff;
-  padding: 20px;
+  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 h1 {
-  color: #e63946;
+  color: crimson;
+  /* Crimson red text */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-input[type="text"] {
+.valentine-card {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.valentine-card img {
+  width: 120px;
+  margin-bottom: 15px;
+  border-radius: 100%;
+}
+
+.valentine-card p {
+  color: #333;
+  /* Adjusted text color */
+  font-size: 1.2rem;
+}
+
+.voucher-section {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: crimson;
+  /* Crimson red text */
+  font-size: 1.1rem;
+}
+
+input {
+  width: 100%;
   padding: 10px;
-  width: 60%;
-  margin: 10px 0;
-  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 15px;
   border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1.1rem;
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #e63946;
+  background-color: crimson;
+  /* Crimson red button */
   color: #fff;
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #a8dadc;
+  background-color: #8b0000;
+  /* Dark red on hover */
 }
 
-body::before {
-  content: "";
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><path d="M50 0a50 50 0 0 0-50 50c0 27.614 22.386 50 50 50s50-22.386 50-50A50 50 0 0 0 50 0zm0 15a35 35 0 0 1 35 35 35 35 0 0 1-35 35 35 35 0 0 1-35-35 35 35 0 0 1 35-35z" fill="%23e63946"/></svg>');
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+#voucherMessage {
+  margin-top: 15px;
+  color: crimson;
+  /* Crimson red text */
+  font-weight: bold;
+  font-size: 1.1rem;
+  opacity: 0;
+  /* Initially hidden */
 }
 
+.voucher-success {
+  animation: bounce 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}

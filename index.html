@@ -1,20 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Valentine's Day Voucher</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Valentine's Surprise</title>
+  <script src="script.js" defer></script>
 </head>
+
 <body>
   <div class="container">
-    <h1>Valentine's Day Voucher</h1>
-    <p>Enter your voucher code below:</p>
-    <form>
-      <input type="text" id="voucherInput" name="voucherInput" placeholder="Enter your voucher code">
-      <button type="submit">Redeem</button>
+    <header>
+      <h1>Valentine's Surprise</h1>
+    </header>
+    <form id="voucherForm">
+      <main>
+        <div class="valentine-card">
+          <img src="heart.png" alt="Heart" />
+          <p>Happy Valentine's Day, my love!</p>
+        </div>
+        <div class="voucher-section">
+          <label for="voucherCode">Enter Voucher Code:</label>
+
+          <input type="text" id="voucherCode" placeholder="Enter your code..."
+            oninput="this.value = this.value.toUpperCase()" />
+          <button type="button" onclick="validateVoucher()">Redeem</button>
+          <p id="voucherMessage"></p>
+        </div>
+      </main>
     </form>
   </div>
 </body>
-</html>
 
+</html>
